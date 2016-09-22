@@ -12,11 +12,11 @@ public class TicTacToeGameState implements TicTacToe {
     //False for player 2
     private boolean turn;
 
-    private int []board;
+    private int[] board;
 
     private boolean isAIMode;
 
-    public TicTacToeGameState(){
+    public TicTacToeGameState() {
 
         this.board = new int[9];
         this.turn = true;
@@ -25,77 +25,69 @@ public class TicTacToeGameState implements TicTacToe {
 
     }
 
-    public TicTacToeGameState(boolean isAIMode)
-    {
+    public TicTacToeGameState(boolean isAIMode) {
         this.board = new int[9];
         this.turn = true;
         this.isAIMode = isAIMode;
     }
 
-    public Winner makeAMove (Square square)
-    {
-            //Making sure the move is possible
-            if (board[square.getValue()] == 0) {
+    public Winner makeAMove(Square square) {
+        //Making sure the move is possible
+        if (board[square.getValue()] == 0) {
 
-                //Check for Player 1 turn
-                if(getTurn() == true)
-                    board[square.getValue()] = 1;
-                else{
-                    //At this point, it is player 2 turn
+            //Check for Player 1 turn
+            if (getTurn() == true)
+                board[square.getValue()] = 1;
+            else {
+                //At this point, it is player 2 turn
 
-                    //Check for AI MODE
-                    if (isAIMode){
-                        //Make random move
-                        board[getAINextPosition()] = 2;
-                    }
-                    else
-                    {
-                        //Make human player 2 move
-                        board[square.getValue()] = 2;
-                    }
+                //Check for AI MODE
+                if (isAIMode) {
+                    //Make random move
+                    board[getAINextPosition()] = 2;
+                } else {
+                    //Make human player 2 move
+                    board[square.getValue()] = 2;
                 }
-
-
-                setTurn(!getTurn());
             }
 
-            //To DO
 
-            return null;
+            setTurn(!getTurn());
+        }
+
+        //To DO
+
+        return null;
 
     }
 
-    public boolean getTurn(){
+    public boolean getTurn() {
         return turn;
     }
 
-    public void setTurn(boolean turn){
+    public void setTurn(boolean turn) {
         this.turn = turn;
     }
 
-    public int[] getBoard()
-    {
+    public int[] getBoard() {
         return board;
     }
 
-    public void setBoard(int [] board)
-    {
+    public void setBoard(int[] board) {
         this.board = board;
     }
 
-    public boolean getAIMode()
-    {
+    public boolean getAIMode() {
         return isAIMode;
     }
 
-    public void setAIMode(boolean aiMode)
-    {
+    public void setAIMode(boolean aiMode) {
         this.isAIMode = aiMode;
     }
 
 
-
-    private int getAINextPosition(){
+    private int getAINextPosition() {
+        //TO DO
         return 0;
     }
 
