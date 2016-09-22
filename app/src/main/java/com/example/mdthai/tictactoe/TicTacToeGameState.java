@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by MDThai on 9/22/2016.
  */
-public class TicTacToeGameState {
+public class TicTacToeGameState implements TicTacToe {
 
 
     //True for player 1
@@ -32,7 +32,7 @@ public class TicTacToeGameState {
         this.isAIMode = isAIMode;
     }
 
-    public void makeAMove (Square square)
+    public Winner makeAMove (Square square)
     {
             //Making sure the move is possible
             if (board[square.getValue()] == 0) {
@@ -58,6 +58,10 @@ public class TicTacToeGameState {
 
                 setTurn(!getTurn());
             }
+
+            //To DO
+
+            return null;
 
     }
 

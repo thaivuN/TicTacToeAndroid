@@ -7,9 +7,10 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TicTacToeGameState tttGame;
+    private TicTacToe tttGame;
     private int pOneCounter;
     private int pTwoCounter;
+    private int tieCounter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
