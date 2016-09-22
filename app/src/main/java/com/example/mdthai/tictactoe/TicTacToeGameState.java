@@ -83,7 +83,7 @@ public class TicTacToeGameState implements TicTacToe {
         this.board = board;
     }
 
-    public boolean getMode()
+    public boolean getAIMode()
     {
         return isAIMode;
     }
