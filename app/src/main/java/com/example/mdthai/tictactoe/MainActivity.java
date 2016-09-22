@@ -17,13 +17,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
     }
 
     public void clickImages(View view)
     {
-        if (((ImageButton)view).isEnabled())
-            ((ImageButton)view).setEnabled(false);
+        ImageButton clickedBtn = (ImageButton) view;
+        Square block = resolveButton(clickedBtn);
+
+        Winner result = tttGame.makeAMove(block);
 
     }
 
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
         switch (name)
         {
-
+            //TO DO: NAME THE IMAGEBUTTONS IN THE XML
         }
 
         return null;
