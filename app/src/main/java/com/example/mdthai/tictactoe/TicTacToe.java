@@ -27,7 +27,7 @@ public interface TicTacToe {
      * Sets the turn of the Players
      * Set to TRUE to switch to PLAYER 1
      * Set to FALSE to switch to PLAYER 2
-     * 
+     *
      * @param turn boolean
      */
     public void setTurn(boolean turn);

@@ -1,6 +1,8 @@
 package com.example.mdthai.tictactoe;
 
 /**
+ * Enum resenting board of the Tic Tac Toe game
+ *
  * Created by MDThai on 9/22/2016.
  */
 public enum Square {
