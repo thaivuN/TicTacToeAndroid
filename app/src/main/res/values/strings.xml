@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TTTSeaimThai-Vu</string>
+    <string name="help">Help</string>
+    <string name="zero">Zero</string>
+    <string name="reset">Reset</string>
+    <string name="about">About</string>
+    <string name="play">Play</string>
+    <string name="score">Score</string>
+</resources>
