@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     {
         savedInstanceState.putIntArray("board", tttGame.getBoard());
         savedInstanceState.putBoolean("turn", tttGame.getTurn());
-        savedInstanceState.putBoolean("mode", tttGame.getMode());
+        savedInstanceState.putBoolean("mode", tttGame.getAIMode());
 
     }
 
