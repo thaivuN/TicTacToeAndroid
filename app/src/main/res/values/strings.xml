@@ -7,4 +7,6 @@
     <string name="play_human">Play V.S. Human</string>
     <string name="play_ai">Play V.S. AI</string>
     <string name="score">Score</string>
+    <string name="descriptPlay">You are playing against Player 2</string>
+    <string name="descriptAI">You are playing against the AI</string>
 </resources>

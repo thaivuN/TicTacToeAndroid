@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,15 +19,31 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         tttGame = new TicTacToeGameState();
 
+
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+
+        TextView tv = (TextView) findViewById(R.id.desc);
+        ImageButton button = (ImageButton) findViewById(R.id.box1);
+
+
+
     }
 
     public void clickImages(View view)
     {
         ImageButton clickedBtn = (ImageButton) view;
         Square block = resolveButton(clickedBtn);
+        if (block != null) {
+            Winner result = tttGame.makeAMove(block);
+            //TO DO: CHANGE IMAGE SRC
 
-        Winner result = tttGame.makeAMove(block);
-
+            //DISABLE button
+            clickedBtn.setEnabled(false);
+        }
     }
 
     @Override
@@ -60,10 +77,30 @@ public class MainActivity extends AppCompatActivity {
 
         switch (name)
         {
+            case "box1":
+                return Square.ONE;
+            case "box2":
+                return Square.TWO;
+            case "box3":
+                return Square.THREE;
+            case "box4":
+                return Square.FOUR;
+            case "box5":
+                return Square.FIVE;
+            case "box6":
+                return Square.SIX;
+            case "box7":
+                return Square.SEVEN;
+            case "box8":
+                return Square.EIGHT;
+            case "box9":
+                return Square.NINE;
+            default:
+                return null;
 
         }
 
-        return null;
+
 
     }
 
