@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        tttGame = new TicTacToeGameState();
 
     }
 
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
         switch (name)
         {
-            //TO DO: NAME THE IMAGEBUTTONS IN THE XML
+
         }
 
         return null;
