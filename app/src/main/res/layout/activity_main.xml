@@ -31,17 +31,21 @@
                 android:id="@+id/box1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:src="@drawable/testx"
+                />
             <ImageButton
                 android:id="@+id/box2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:src="@drawable/testx"/>
             <ImageButton
                 android:id="@+id/box3"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:src="@drawable/testx"/>
         </LinearLayout>
         <LinearLayout
 
@@ -54,17 +58,20 @@
                 android:id="@+id/box4"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:src="@drawable/testx"/>
             <ImageButton
                 android:id="@+id/box5"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:src="@drawable/testx"/>
             <ImageButton
                 android:id="@+id/box6"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:src="@drawable/testx"/>
 
         </LinearLayout>
         <LinearLayout
@@ -78,17 +85,20 @@
                 android:id="@+id/box7"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:src="@drawable/testx"/>
             <ImageButton
                 android:id="@+id/box8"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:src="@drawable/testx"/>
             <ImageButton
                 android:id="@+id/box9"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:src="@drawable/testx"/>
 
         </LinearLayout>
 

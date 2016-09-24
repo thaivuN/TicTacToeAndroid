@@ -40,9 +40,45 @@ public class MainActivity extends AppCompatActivity {
         if (block != null) {
             Winner result = tttGame.makeAMove(block);
             //TO DO: CHANGE IMAGE SRC
-
+            String image = "";
+            if (tttGame.getTurn() == false) {
+                //Player 1 Image
+                //TO DO: FIND IMAGE
+                //clickedBtn.setImageResource();
+            }
+            else
+            {
+                //Player 2 Image
+                //TO DO: FIND IMAGE
+                //clickedBtn.setImageResource();
+            }
             //DISABLE button
             clickedBtn.setEnabled(false);
+
+            if (result == Winner.P_ONE || result == Winner.P_TWO || result == Winner.TIE){
+
+                if (result == Winner.P_ONE){
+                    pOneCounter++;
+                }
+                else if (result == Winner.P_TWO)
+                {
+                    pTwoCounter++;
+                }
+                else{
+                    tieCounter++;
+                }
+
+                disableBtn();
+
+            }
+            else
+            {
+                if(tttGame.getAIMode())
+                {
+
+                }
+            }
+
         }
     }
 
@@ -100,9 +136,26 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+    }
 
+    /**
+     * Disable all ImageButton objects
+     */
+    private void disableBtn(){
+        int [] ids = new int[]{
+                R.id.box1, R.id.box2, R.id.box3, R.id.box4, R.id.box4, R.id.box5, R.id.box6,
+                R.id.box7, R.id.box8, R.id.box9
+        };
+
+        for (int i = 0; i < ids.length; i++)
+        {
+            ImageButton btnToDisable = (ImageButton)findViewById(ids[i]);
+            btnToDisable.setEnabled(false);
+        }
 
     }
+
+
 
 
 }
