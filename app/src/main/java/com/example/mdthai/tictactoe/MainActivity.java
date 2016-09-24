@@ -29,8 +29,6 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = (TextView) findViewById(R.id.desc);
         ImageButton button = (ImageButton) findViewById(R.id.box1);
 
-
-
     }
 
     public void clickImages(View view)
@@ -80,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
                     Winner aiWin = tttGame.makeAMove(aiMove);
                     ImageButton aiBtn = (ImageButton) findViewById(findIDbySquare(aiMove));
 
+                    aiBtn.setEnabled(false);
                     //TO DO: FIND IMAGE
                     //aiBtn.setImageResource();
 
@@ -197,8 +196,38 @@ public class MainActivity extends AppCompatActivity {
 
     public void resetGame(View view)
     {
+        boolean mode = tttGame.getAIMode();
+        tttGame = new TicTacToeGameState(mode);
+
+
 
     }
+
+    public void zeroCounters(View view)
+    {
+        tieCounter = 0;
+        pTwoCounter = 0;
+        pOneCounter =0;
+
+    }
+
+    private void resetBoard(){
+
+        int [] ids = new int[]{
+                R.id.box1, R.id.box2, R.id.box3, R.id.box4, R.id.box4, R.id.box5, R.id.box6,
+                R.id.box7, R.id.box8, R.id.box9
+        };
+
+        for (int i = 0; i < ids.length; i++)
+        {
+            ImageButton btnToDisable = (ImageButton)findViewById(ids[i]);
+            btnToDisable.setEnabled(true);
+            //Change image back to default Image
+            //btnToDisable.setImageResource();
+        }
+    }
+
+
 
 
 
