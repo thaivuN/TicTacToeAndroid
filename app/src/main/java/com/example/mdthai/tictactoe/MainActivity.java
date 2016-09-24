@@ -75,6 +75,22 @@ public class MainActivity extends AppCompatActivity {
             {
                 if(tttGame.getAIMode())
                 {
+                    Square aiMove = tttGame.getAINextPosition();
+
+                    Winner aiWin = tttGame.makeAMove(aiMove);
+                    ImageButton aiBtn = (ImageButton) findViewById(findIDbySquare(aiMove));
+
+                    //TO DO: FIND IMAGE
+                    //aiBtn.setImageResource();
+
+                    if (aiWin == Winner.P_TWO || aiWin == Winner.TIE){
+                        if(aiWin == Winner.P_TWO)
+                            pTwoCounter++;
+                        else
+                            tieCounter++;
+
+                        disableBtn();
+                    }
 
                 }
             }
@@ -138,6 +154,30 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private int findIDbySquare(Square square)
+    {
+        switch (square.getValue()){
+            case 0:
+                return R.id.box1;
+            case 1:
+                return R.id.box2;
+            case 2:
+                return R.id.box3;
+            case 3:
+                return R.id.box4;
+            case 4:
+                return R.id.box5;
+            case 5:
+                return R.id.box6;
+            case 6:
+                return R.id.box7;
+            case 7:
+                return R.id.box8;
+            default:
+                return R.id.box9;
+        }
+    }
+
     /**
      * Disable all ImageButton objects
      */
@@ -152,6 +192,11 @@ public class MainActivity extends AppCompatActivity {
             ImageButton btnToDisable = (ImageButton)findViewById(ids[i]);
             btnToDisable.setEnabled(false);
         }
+
+    }
+
+    public void resetGame(View view)
+    {
 
     }
 
