@@ -62,4 +62,10 @@ public interface TicTacToe {
      * @param aiMode
      */
     public void setAIMode (boolean aiMode);
+
+    /**
+     * Returns the AI's next move
+     * @return return the next move of the AI
+     */
+    public Square getAINextPosition();
 }

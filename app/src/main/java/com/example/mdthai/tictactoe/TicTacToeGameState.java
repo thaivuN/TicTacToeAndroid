@@ -41,21 +41,16 @@ public class TicTacToeGameState implements TicTacToe {
             else {
                 //At this point, it is player 2 turn
 
-                //Check for AI MODE
-                if (isAIMode) {
-                    //Make random move
-                    board[getAINextPosition()] = 2;
-                } else {
-                    //Make human player 2 move
                     board[square.getValue()] = 2;
-                }
+
             }
 
-
+            Winner win = checkWin();
             setTurn(!getTurn());
-        }
 
-        //To DO
+            return win;
+        }
+        else
 
         return null;
 
@@ -86,9 +81,85 @@ public class TicTacToeGameState implements TicTacToe {
     }
 
 
-    private int getAINextPosition() {
-        //TO DO
-        return 0;
+    public Square getAINextPosition() {
+
+        int rand;
+        do {
+            rand = (int) (Math.random() * 9);
+        }while (board[rand] != 0);
+
+
+        return null;
+    }
+
+    private Square resolveSquare(int i){
+        switch (i) {
+            case 0:
+                return Square.ONE;
+            case 1:
+                return Square.TWO;
+            case 2:
+                return Square.THREE;
+            case 3:
+                return Square.FOUR;
+            case 4:
+                return Square.FIVE;
+            case 5:
+                return Square.SIX;
+            case 6:
+                return Square.SEVEN;
+            case 7:
+                return Square.EIGHT;
+            case 8:
+                return Square.NINE;
+            default:
+                throw new IllegalArgumentException
+                        ("UNEXPECTED RESULT in resolveSquare(int i)");
+        }
+
+
+
+    }
+
+    private Winner checkWin(){
+        Winner winner = Winner.NONE;
+
+        String cond;
+
+        if (turn == true)
+            cond = "111";
+        else
+            cond = "222";
+
+        //Check for WIN
+        String row1 = board[0] + "" + board[1] + "" + board[2];
+        String row2 = board[3] + "" + board[4] + "" + board[5];
+        String row3 = board[6] + "" + board[7] + "" + board[8];
+
+        String col1 = board[0] + "" + board[3] + "" + board[6];
+        String col2 = board[1] + "" + board[4] + "" + board[7];
+        String col3 = board[2] + "" + board[5] + "" + board[8];
+
+        String dia1 = board[0] + "" + board[4] + "" + board[8];
+        String dia2 = board[2] + "" + board[4] + "" + board[6];
+
+        if (row1.equals(cond) || row2.equals(cond) || row3.equals(cond)
+                ||col1.equals(cond) || col2.equals(cond) || col3.equals(cond)
+                ||dia1.equals(cond) || dia2.equals(cond)){
+
+            //There is a win
+            if (turn == true)
+                winner = Winner.P_ONE;
+            else
+                winner = Winner.P_TWO;
+
+        }
+
+        //Check for TIE
+        if (winner.getValue() == Winner.NONE.getValue()) {
+
+        }
+        return winner;
     }
 
 
