@@ -155,10 +155,20 @@ public class TicTacToeGameState implements TicTacToe {
 
         }
 
-        //Check for TIE
-        if (winner.getValue() == Winner.NONE.getValue()) {
 
+        //Check for TIE if still no Winner
+        if (winner.getValue() == Winner.NONE.getValue()) {
+            boolean findZeros = false;
+            for (int i = 0; i < board.length && findZeros == false; i++)
+                if (board[i] == 0)
+                    findZeros = true;
+
+            //If no 0 value left in the board array, game is a tie
+            if (findZeros == false)
+                winner = Winner.TIE;
         }
+
+        //Return the Winner state
         return winner;
     }
 
