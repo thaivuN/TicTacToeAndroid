@@ -83,13 +83,18 @@ public class TicTacToeGameState implements TicTacToe {
 
     public Square getAINextPosition() {
 
+        //Making sure this doesn't accidentally run into an eternal loop
+        if (findZeros() == false)
+            return null;
+
         int rand;
         do {
             rand = (int) (Math.random() * 9);
         }while (board[rand] != 0);
 
 
-        return null;
+        return resolveSquare(rand);
+
     }
 
     private Square resolveSquare(int i){
@@ -158,18 +163,28 @@ public class TicTacToeGameState implements TicTacToe {
 
         //Check for TIE if still no Winner
         if (winner.getValue() == Winner.NONE.getValue()) {
-            boolean findZeros = false;
-            for (int i = 0; i < board.length && findZeros == false; i++)
-                if (board[i] == 0)
-                    findZeros = true;
+
 
             //If no 0 value left in the board array, game is a tie
-            if (findZeros == false)
+            if (findZeros() == false)
                 winner = Winner.TIE;
         }
 
         //Return the Winner state
         return winner;
+    }
+
+    private boolean findZeros()
+    {
+        boolean hasZerosLeft = false;
+        for (int i = 0; i < board.length && hasZerosLeft == false;i++)
+        {
+            if (board[i] == 0)
+                hasZerosLeft = true;
+        }
+
+        return hasZerosLeft;
+
     }
 
 

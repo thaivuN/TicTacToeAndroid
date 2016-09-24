@@ -80,4 +80,44 @@ public class TicTacToeTest {
 
     }
 
+    @Test
+    public void testAIMoveCase1(){
+        //Say X = Player 1, O = Player 2, - = Empty
+        // 0 - O
+        // - X X
+        // X - -
+
+        int[] board = new int[]{2,0,2,0,1,1,1,0,0};
+
+        ttt.setBoard(board);
+        ttt.setTurn(false);
+        ttt.setAIMode(true);
+
+        Square move = ttt.getAINextPosition();
+
+        boolean[] expected = new boolean[]{true, true, true, true,
+                true, true, true, true,
+                true, true, true, true};
+
+        //Making sure that all AI actually makes a valid random move
+        boolean[] real = new boolean[]{
+                ((ttt.getBoard())[ttt.getAINextPosition().getValue()] == 0),
+                ((ttt.getBoard())[ttt.getAINextPosition().getValue()] == 0),
+                ((ttt.getBoard())[ttt.getAINextPosition().getValue()] == 0),
+                ((ttt.getBoard())[ttt.getAINextPosition().getValue()] == 0),
+                ((ttt.getBoard())[ttt.getAINextPosition().getValue()] == 0),
+                ((ttt.getBoard())[ttt.getAINextPosition().getValue()] == 0),
+                ((ttt.getBoard())[ttt.getAINextPosition().getValue()] == 0),
+                ((ttt.getBoard())[ttt.getAINextPosition().getValue()] == 0),
+                ((ttt.getBoard())[ttt.getAINextPosition().getValue()] == 0),
+                ((ttt.getBoard())[ttt.getAINextPosition().getValue()] == 0),
+                ((ttt.getBoard())[ttt.getAINextPosition().getValue()] == 0),
+                ((ttt.getBoard())[ttt.getAINextPosition().getValue()] == 0)
+        };
+
+        assertArrayEquals(expected, real);
+
+
+    }
+
 }
