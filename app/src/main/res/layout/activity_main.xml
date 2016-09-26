@@ -33,21 +33,23 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/notplayed"
-
+                android:background="@drawable/tile"
+                android:onClick="clickImages"
                 />
             <ImageButton
                 android:id="@+id/box2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/notplayed"/>
+                android:background="@drawable/tile"
+                android:onClick="clickImages"/>
             <ImageButton
                 android:id="@+id/box3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/notplayed"/>
+                android:background="@drawable/tile"
+                android:onClick="clickImages"/>
         </LinearLayout>
         <LinearLayout
 
@@ -61,19 +63,22 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/notplayed"/>
+                android:background="@drawable/tile"
+                android:onClick="clickImages"/>
             <ImageButton
                 android:id="@+id/box5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/notplayed"/>
+                android:background="@drawable/tile"
+                android:onClick="clickImages"/>
             <ImageButton
                 android:id="@+id/box6"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/notplayed"/>
+                android:background="@drawable/tile"
+                android:onClick="clickImages"/>
 
         </LinearLayout>
         <LinearLayout
@@ -88,19 +93,22 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/notplayed"/>
+                android:background="@drawable/tile"
+                android:onClick="clickImages"/>
             <ImageButton
                 android:id="@+id/box8"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/notplayed"/>
+                android:background="@drawable/tile"
+                android:onClick="clickImages"/>
             <ImageButton
                 android:id="@+id/box9"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/notplayed"/>
+                android:background="@drawable/tile"
+                android:onClick="clickImages"/>
 
         </LinearLayout>
 
