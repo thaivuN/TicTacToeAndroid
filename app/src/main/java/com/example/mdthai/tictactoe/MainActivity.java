@@ -42,15 +42,16 @@ public class MainActivity extends AppCompatActivity {
             if (tttGame.getTurn() == false) {
                 //Player 1 Image
                 //TO DO: FIND IMAGE
-                //clickedBtn.setImageResource();
+                clickedBtn.setBackgroundResource(R.drawable.x);
             }
             else
             {
                 //Player 2 Image
                 //TO DO: FIND IMAGE
-                //clickedBtn.setImageResource();
+                clickedBtn.setBackgroundResource(R.drawable.o);
             }
             //DISABLE button
+
             clickedBtn.setEnabled(false);
 
             if (result == Winner.P_ONE || result == Winner.P_TWO || result == Winner.TIE){
@@ -78,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                     Winner aiWin = tttGame.makeAMove(aiMove);
                     ImageButton aiBtn = (ImageButton) findViewById(findIDbySquare(aiMove));
 
+                    aiBtn.setBackgroundResource(R.drawable.o);
                     aiBtn.setEnabled(false);
                     //TO DO: FIND IMAGE
                     //aiBtn.setImageResource();
@@ -114,6 +116,10 @@ public class MainActivity extends AppCompatActivity {
         tttGame.setBoard(savedInstanceState.getIntArray("board"));
         tttGame.setTurn(savedInstanceState.getBoolean("turn"));
         tttGame.setAIMode(savedInstanceState.getBoolean("mode"));
+
+        restoreBoard(savedInstanceState.getIntArray("board"));
+
+
 
     }
 
@@ -227,7 +233,38 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void restoreBoard(int[]board)
+    {
+        int [] ids = new int[]{
+                R.id.box1, R.id.box2, R.id.box3, R.id.box4, R.id.box4, R.id.box5, R.id.box6,
+                R.id.box7, R.id.box8, R.id.box9
+        };
 
+        for (int i = 0; i < board.length; i++)
+        {
+            ImageButton btn = (ImageButton)findViewById(ids[i]);
+            if (board[i] == 1)
+            {
+                btn.setImageResource(R.drawable.x);
+                btn.setEnabled(false);
+            }
+            else if (board[i] == 2)
+            {
+                btn.setImageResource(R.drawable.o);
+                btn.setEnabled(false);
+            }
+            else if(board[i] ==0)
+            {
+                btn.setEnabled(true);
+                btn.setImageResource(R.drawable.tile);
+            }
+        }
+
+        if (tttGame.checkWin() != Winner.NONE)
+        {
+            disableBtn();
+        }
+    }
 
 
 
