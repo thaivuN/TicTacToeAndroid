@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void disableBtn(){
         int [] ids = new int[]{
-                R.id.box1, R.id.box2, R.id.box3, R.id.box4, R.id.box4, R.id.box5, R.id.box6,
+                R.id.box1, R.id.box2, R.id.box3, R.id.box4, R.id.box5, R.id.box6,
                 R.id.box7, R.id.box8, R.id.box9
         };
 
@@ -222,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
     private void resetBoard(){
 
         int [] ids = new int[]{
-                R.id.box1, R.id.box2, R.id.box3, R.id.box4, R.id.box4, R.id.box5, R.id.box6,
+                R.id.box1, R.id.box2, R.id.box3, R.id.box4, R.id.box5, R.id.box6,
                 R.id.box7, R.id.box8, R.id.box9
         };
 
@@ -243,27 +243,28 @@ public class MainActivity extends AppCompatActivity {
     private void restoreBoard(int[]board, boolean[] state)
     {
         int [] ids = new int[]{
-                R.id.box1, R.id.box2, R.id.box3, R.id.box4, R.id.box4, R.id.box5, R.id.box6,
+                R.id.box1, R.id.box2, R.id.box3, R.id.box4, R.id.box5, R.id.box6,
                 R.id.box7, R.id.box8, R.id.box9
         };
 
         for (int i = 0; i < board.length; i++)
         {
+
             ImageButton btn = (ImageButton)findViewById(ids[i]);
             if (board[i] == 1)
             {
-                btn.setImageResource(R.drawable.x);
+                btn.setBackgroundResource(R.drawable.x);
 
             }
             else if (board[i] == 2)
             {
-                btn.setImageResource(R.drawable.o);
+                btn.setBackgroundResource(R.drawable.o);
 
             }
             else if(board[i] ==0)
             {
 
-                btn.setImageResource(R.drawable.tile);
+                btn.setBackgroundResource(R.drawable.tile);
             }
 
             btn.setEnabled(state[i]);
@@ -274,7 +275,7 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean[] getState(){
         int [] ids = new int[]{
-                R.id.box1, R.id.box2, R.id.box3, R.id.box4, R.id.box4, R.id.box5, R.id.box6,
+                R.id.box1, R.id.box2, R.id.box3, R.id.box4, R.id.box5, R.id.box6,
                 R.id.box7, R.id.box8, R.id.box9
         };
 
