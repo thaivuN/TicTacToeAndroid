@@ -31,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * The core of the Tic Tac Toe game
+     *
+     * @param view
+     */
     public void clickImages(View view)
     {
         ImageButton clickedBtn = (ImageButton) view;
@@ -125,6 +130,120 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    /**
+     * Reset the Game
+     * @param view
+     */
+    public void resetGame(View view)
+    {
+        boolean mode = tttGame.getAIMode();
+        tttGame = new TicTacToeGameState(mode);
+        resetBoard();
+
+
+    }
+
+    /**
+     * Reset the counters
+     *
+     * @param view
+     */
+    public void zeroCounters(View view)
+    {
+        tieCounter = 0;
+        pTwoCounter = 0;
+        pOneCounter =0;
+
+    }
+
+    private void resetBoard(){
+
+        int [] ids = new int[]{
+                R.id.box1, R.id.box2, R.id.box3, R.id.box4, R.id.box5, R.id.box6,
+                R.id.box7, R.id.box8, R.id.box9
+        };
+
+        for (int i = 0; i < ids.length; i++)
+        {
+            ImageButton btnToDisable = (ImageButton)findViewById(ids[i]);
+            btnToDisable.setEnabled(true);
+            btnToDisable.setBackgroundResource(R.drawable.tile);
+        }
+
+
+
+    }
+
+    private void restoreBoard(int[]board, boolean[] state)
+    {
+        int [] ids = new int[]{
+                R.id.box1, R.id.box2, R.id.box3, R.id.box4, R.id.box5, R.id.box6,
+                R.id.box7, R.id.box8, R.id.box9
+        };
+
+        for (int i = 0; i < board.length; i++)
+        {
+
+            ImageButton btn = (ImageButton)findViewById(ids[i]);
+            if (board[i] == 1)
+            {
+                btn.setBackgroundResource(R.drawable.x);
+
+            }
+            else if (board[i] == 2)
+            {
+                btn.setBackgroundResource(R.drawable.o);
+
+            }
+            else if(board[i] ==0)
+            {
+
+                btn.setBackgroundResource(R.drawable.tile);
+            }
+
+            btn.setEnabled(state[i]);
+        }
+
+
+    }
+
+    private boolean[] getState(){
+        int [] ids = new int[]{
+                R.id.box1, R.id.box2, R.id.box3, R.id.box4, R.id.box5, R.id.box6,
+                R.id.box7, R.id.box8, R.id.box9
+        };
+
+        boolean[] enabled = new boolean[ids.length];
+
+        for (int i = 0; i<ids.length; i++)
+        {
+            ImageButton btn = (ImageButton)findViewById(ids[i]);
+            enabled[i] = btn.isEnabled();
+        }
+
+        return enabled;
+    }
+
+    /**
+     * Disable all ImageButton objects
+     */
+    private void disableBtn(){
+        int [] ids = new int[]{
+                R.id.box1, R.id.box2, R.id.box3, R.id.box4, R.id.box5, R.id.box6,
+                R.id.box7, R.id.box8, R.id.box9
+        };
+
+        for (int i = 0; i < ids.length; i++)
+        {
+            ImageButton btnToDisable = (ImageButton)findViewById(ids[i]);
+            btnToDisable.setEnabled(false);
+        }
+
+    }
+
+
+
     /**
      * Returns a square enum
      * @param button ImageButton
@@ -184,113 +303,6 @@ public class MainActivity extends AppCompatActivity {
                 return R.id.box9;
         }
     }
-
-    /**
-     * Disable all ImageButton objects
-     */
-    private void disableBtn(){
-        int [] ids = new int[]{
-                R.id.box1, R.id.box2, R.id.box3, R.id.box4, R.id.box5, R.id.box6,
-                R.id.box7, R.id.box8, R.id.box9
-        };
-
-        for (int i = 0; i < ids.length; i++)
-        {
-            ImageButton btnToDisable = (ImageButton)findViewById(ids[i]);
-            btnToDisable.setEnabled(false);
-        }
-
-    }
-
-    public void resetGame(View view)
-    {
-        boolean mode = tttGame.getAIMode();
-        tttGame = new TicTacToeGameState(mode);
-
-
-
-    }
-
-    public void zeroCounters(View view)
-    {
-        tieCounter = 0;
-        pTwoCounter = 0;
-        pOneCounter =0;
-
-    }
-
-    private void resetBoard(){
-
-        int [] ids = new int[]{
-                R.id.box1, R.id.box2, R.id.box3, R.id.box4, R.id.box5, R.id.box6,
-                R.id.box7, R.id.box8, R.id.box9
-        };
-
-        for (int i = 0; i < ids.length; i++)
-        {
-            ImageButton btnToDisable = (ImageButton)findViewById(ids[i]);
-            btnToDisable.setEnabled(true);
-            btnToDisable.setBackgroundResource(R.drawable.tile);
-        }
-
-        boolean gameMode = tttGame.getAIMode();
-
-        //Make a new instance of the game
-        tttGame = new TicTacToeGameState(gameMode);
-
-    }
-
-    private void restoreBoard(int[]board, boolean[] state)
-    {
-        int [] ids = new int[]{
-                R.id.box1, R.id.box2, R.id.box3, R.id.box4, R.id.box5, R.id.box6,
-                R.id.box7, R.id.box8, R.id.box9
-        };
-
-        for (int i = 0; i < board.length; i++)
-        {
-
-            ImageButton btn = (ImageButton)findViewById(ids[i]);
-            if (board[i] == 1)
-            {
-                btn.setBackgroundResource(R.drawable.x);
-
-            }
-            else if (board[i] == 2)
-            {
-                btn.setBackgroundResource(R.drawable.o);
-
-            }
-            else if(board[i] ==0)
-            {
-
-                btn.setBackgroundResource(R.drawable.tile);
-            }
-
-            btn.setEnabled(state[i]);
-        }
-
-
-    }
-
-    private boolean[] getState(){
-        int [] ids = new int[]{
-                R.id.box1, R.id.box2, R.id.box3, R.id.box4, R.id.box5, R.id.box6,
-                R.id.box7, R.id.box8, R.id.box9
-        };
-
-        boolean[] enabled = new boolean[ids.length];
-
-        for (int i = 0; i<ids.length; i++)
-        {
-            ImageButton btn = (ImageButton)findViewById(ids[i]);
-            enabled[i] = btn.isEnabled();
-        }
-
-        return enabled;
-    }
-
-
 
 
 }
