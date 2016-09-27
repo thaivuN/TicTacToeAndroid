@@ -25,8 +25,10 @@
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="10"
-            android:orientation="vertical">
+            android:layout_weight="14"
+            android:orientation="vertical"
+            android:layout_marginRight="50dp"
+            >
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -152,27 +154,15 @@
                 android:layout_weight="1"
                 android:text="@string/score"/>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="2">
-
             <Button
-                android:id="@+id/play_human"
+                android:id="@+id/play"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/play_human"/>
-            <Button
-                android:id="@+id/play_ai"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/play_ai"
-                />
+                android:text="@string/play"/>
 
         </LinearLayout>
+
+
 
     </LinearLayout>
 
