@@ -38,19 +38,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:src="@drawable/testx"/>
+                    android:background="@drawable/tile"/>
                 <ImageButton
                     android:id="@+id/box2"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:src="@drawable/testx"/>
+                    android:background="@drawable/tile"/>
                 <ImageButton
                     android:id="@+id/box3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:src="@drawable/testx"/>
+                    android:background="@drawable/tile"/>
             </LinearLayout>
             <LinearLayout
 
@@ -64,19 +64,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:src="@drawable/testx"/>
+                    android:background="@drawable/tile"/>
                 <ImageButton
                     android:id="@+id/box5"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:src="@drawable/testx"/>
+                    android:background="@drawable/tile"/>
                 <ImageButton
                     android:id="@+id/box6"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:src="@drawable/testx"/>
+                    android:background="@drawable/tile"/>
 
             </LinearLayout>
             <LinearLayout
@@ -91,19 +91,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:src="@drawable/testx"/>
+                    android:background="@drawable/tile"/>
                 <ImageButton
                     android:id="@+id/box8"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:src="@drawable/testx"/>
+                    android:background="@drawable/tile"/>
                 <ImageButton
                     android:id="@+id/box9"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:src="@drawable/testx"/>
+                    android:background="@drawable/tile"/>
 
             </LinearLayout>
 
