@@ -129,7 +129,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/reset"/>
+                android:text="@string/reset"
+                android:onClick="resetGame"/>
 
             <Button
                 android:id="@+id/help"
