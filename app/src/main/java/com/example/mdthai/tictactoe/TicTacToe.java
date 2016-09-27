@@ -14,11 +14,6 @@ public interface TicTacToe {
      */
     public Winner makeAMove(Square square);
 
-    /**
-     * Returns a Winner enum based on the board.
-     * @return Winner enum
-     */
-    public Winner checkWin();
 
     /**
      * Returns a boolean value.

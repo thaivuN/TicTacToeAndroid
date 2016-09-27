@@ -126,7 +126,7 @@ public class TicTacToeGameState implements TicTacToe {
 
     }
 
-    public Winner checkWin(){
+    private Winner checkWin(){
         Winner winner = Winner.NONE;
 
         String cond;
