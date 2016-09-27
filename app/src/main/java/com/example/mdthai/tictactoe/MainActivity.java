@@ -2,6 +2,7 @@ package com.example.mdthai.tictactoe;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -79,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 if(tttGame.getAIMode())
                 {
+
                     Square aiMove = tttGame.getAINextPosition();
 
                     Winner aiWin = tttGame.makeAMove(aiMove);
@@ -155,6 +157,19 @@ public class MainActivity extends AppCompatActivity {
         pTwoCounter = 0;
         pOneCounter =0;
 
+    }
+
+    /**
+     *
+     *
+     *
+     */
+    public void onPlayGame(View view)
+    {
+        boolean newMode = !tttGame.getAIMode();
+
+        tttGame = new TicTacToeGameState(newMode);
+        resetBoard();
     }
 
     private void resetBoard(){
