@@ -1,5 +1,6 @@
 package com.example.mdthai.tictactoe;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         tttGame = new TicTacToeGameState();
 
+        restorePreferences();
 
 
 
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 disableBtn();
+                savePreferences();
 
             }
             else
@@ -103,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
                             tieCounter++;
 
                         disableBtn();
+                        savePreferences();
                     }
 
                 }
@@ -111,6 +115,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Saves data into memory
+     * @param savedInstanceState Bundle
+     */
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState)
     {
@@ -127,6 +135,11 @@ public class MainActivity extends AppCompatActivity {
         savedInstanceState.putBooleanArray("state", enabled);
     }
 
+    /**
+     * Reads and restores from memory
+     *
+     * @param savedInstanceState Bundle
+     */
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState){
         super.onRestoreInstanceState(savedInstanceState);
@@ -145,6 +158,34 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    /**
+     *
+     */
+    private void savePreferences(){
+        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+
+        editor.putInt("p1Count", pOneCounter);
+        editor.putInt("p2Count", pTwoCounter);
+        editor.putInt("pAICount", pAICounter);
+        editor.putInt("tieCount", tieCounter);
+
+        editor.commit();
+    }
+
+    /**
+     * Reads and Loads data from SharedPreferences
+     *
+     */
+    private void restorePreferences(){
+        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+
+        pOneCounter = prefs.getInt("p1Count",0);
+        pTwoCounter = prefs.getInt("p2Count",0);
+        pAICounter = prefs.getInt("pAICount",0);
+        tieCounter = prefs.getInt("tieCount",0);
     }
 
 
@@ -171,12 +212,15 @@ public class MainActivity extends AppCompatActivity {
         tieCounter = 0;
         pTwoCounter = 0;
         pOneCounter =0;
+        pAICounter = 0;
+
+        savePreferences();
 
     }
 
     /**
      *
-     *
+     * Starts a new game and switches the mode of the Game
      *
      */
     public void onPlayGame(View view)
@@ -237,6 +281,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
 
     private boolean[] getState(){
         int [] ids = new int[]{

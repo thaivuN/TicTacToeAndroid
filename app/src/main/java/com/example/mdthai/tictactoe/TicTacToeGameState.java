@@ -3,7 +3,7 @@ package com.example.mdthai.tictactoe;
 import java.io.Serializable;
 
 /**
- * Created by MDThai on 9/22/2016.
+ * Created by Thai-Vu Nguyen and Seaim Khan on 9/22/2016.
  */
 public class TicTacToeGameState implements TicTacToe {
 
