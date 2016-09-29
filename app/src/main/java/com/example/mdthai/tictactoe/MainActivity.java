@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private TicTacToe tttGame;
     private int pOneCounter;
     private int pTwoCounter;
+    private int pAICounter;
     private int tieCounter;
 
     @Override
@@ -19,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tttGame = new TicTacToeGameState();
+
+
+
+
 
 
     }
@@ -93,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
                     if (aiWin == Winner.P_TWO || aiWin == Winner.TIE){
                         if(aiWin == Winner.P_TWO)
-                            pTwoCounter++;
+                            pAICounter++;
                         else
                             tieCounter++;
 
@@ -113,6 +118,11 @@ public class MainActivity extends AppCompatActivity {
         savedInstanceState.putBoolean("turn", tttGame.getTurn());
         savedInstanceState.putBoolean("mode", tttGame.getAIMode());
 
+        savedInstanceState.putInt("p1Count", pOneCounter);
+        savedInstanceState.putInt("p2Count", pTwoCounter);
+        savedInstanceState.putInt("pAICount",pAICounter);
+        savedInstanceState.putInt("tieCount", tieCounter);
+
         boolean[] enabled = getState();
         savedInstanceState.putBooleanArray("state", enabled);
     }
@@ -125,6 +135,11 @@ public class MainActivity extends AppCompatActivity {
         tttGame.setBoard(savedInstanceState.getIntArray("board"));
         tttGame.setTurn(savedInstanceState.getBoolean("turn"));
         tttGame.setAIMode(savedInstanceState.getBoolean("mode"));
+
+        pOneCounter = savedInstanceState.getInt("p1Count");
+        pTwoCounter = savedInstanceState.getInt("p2Count");
+        pAICounter = savedInstanceState.getInt("pAICount");
+        tieCounter = savedInstanceState.getInt("tieCount");
 
         restoreBoard(savedInstanceState.getIntArray("board"), savedInstanceState.getBooleanArray("state"));
 
