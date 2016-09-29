@@ -22,4 +22,5 @@
     <string name="score_p2">Player 2 Score: </string>
     <string name="score_ai">AI Score: </string>
     <string name="score_tie">Number of Ties: </string>
+    <string name="authors">App written by Thai-Vu Nguyen and Seaim Khan</string>
 </resources>

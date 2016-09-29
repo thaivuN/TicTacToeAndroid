@@ -28,14 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStart(){
-        super.onStart();
-
-        TextView tv = (TextView) findViewById(R.id.desc);
-        ImageButton button = (ImageButton) findViewById(R.id.box1);
-
-    }
 
     /**
      * Launch Help Activity
