@@ -25,9 +25,6 @@ public class MainActivity extends AppCompatActivity {
         restorePreferences();
 
 
-
-
-
     }
 
     @Override
@@ -186,6 +183,7 @@ public class MainActivity extends AppCompatActivity {
         pTwoCounter = prefs.getInt("p2Count",0);
         pAICounter = prefs.getInt("pAICount",0);
         tieCounter = prefs.getInt("tieCount",0);
+
     }
 
 
@@ -231,6 +229,9 @@ public class MainActivity extends AppCompatActivity {
         resetBoard();
     }
 
+    /**
+     * Resets the board view
+     */
     private void resetBoard(){
 
         int [] ids = new int[]{
@@ -249,6 +250,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Restore the state of the board
+     * @param board
+     * @param state
+     */
     private void restoreBoard(int[]board, boolean[] state)
     {
         int [] ids = new int[]{
@@ -282,8 +288,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
+    /**
+     * returns the enabled states of the tiles of the board
+     * @return array of boolean
+     */
     private boolean[] getState(){
         int [] ids = new int[]{
                 R.id.box1, R.id.box2, R.id.box3, R.id.box4, R.id.box5, R.id.box6,
