@@ -1,5 +1,6 @@
 package com.example.mdthai.tictactoe;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -36,6 +37,25 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Launch Help Activity
+     * @param view
+     */
+    public void launchHelp(View view){
+        Intent intent = new Intent(this, HelpActivity.class);
+        startActivity(intent);
+    }
+
+    public void launchScore(View view){
+        Intent intent = new Intent(this, ScoreActivity.class);
+
+        intent.putExtra("p1Count", pOneCounter);
+        intent.putExtra("p2Count", pTwoCounter);
+        intent.putExtra("pAICount", pAICounter);
+        intent.putExtra("tieCount", tieCounter);
+
+        startActivity(intent);
+    }
     /**
      * The core of the Tic Tac Toe game
      *
