@@ -17,4 +17,5 @@
     <string name="help_text4">Press Zero to reset the Scores.</string>
     <string name="help_text5">Press Play to restart the session and switch between Player 1 vs Player 2 and Player 1 vs AI.</string>
     <string name="help_text6">Press Score to see the Score board.</string>
+    <string name="close_btn">Return</string>
 </resources>
