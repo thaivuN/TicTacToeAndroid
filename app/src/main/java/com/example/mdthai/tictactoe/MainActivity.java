@@ -232,6 +232,7 @@ public class MainActivity extends AppCompatActivity {
         pOneCounter =0;
         pAICounter = 0;
 
+
         savePreferences();
 
     }

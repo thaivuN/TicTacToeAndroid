@@ -12,12 +12,31 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="@string/title_score"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"/>
 
     <TextView
-        android:id="@+id/score_text"
+        android:id="@+id/score_p1_text"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="@string/score_p1"/>
+
+    <TextView
+        android:id="@+id/score_p2_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/score_p2"/>
+    <TextView
+        android:id="@+id/score_Ai_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/score_ai"/>
+    <TextView
+        android:id="@+id/score_tie_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/score_tie"/>
 
     <Button
         android:layout_width="wrap_content"
