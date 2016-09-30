@@ -1,0 +1,10 @@
+TO DO LIST
+
+- Get images for the TicTacToe grid
+- POPULATE THE IMAGES INTO both layouts
+- FIX THE LOOK of the layouts
+- Implement Buttons (Help, Score, Play, etc...) of the game
+- Create Activities XML AND JAVA files that are to be launched by said Buttons
+- FINISH GAME run logic in the main activity and TicTacToeGameState class
+- FRENCH strings xml
+- BUILD OUR LOGO
