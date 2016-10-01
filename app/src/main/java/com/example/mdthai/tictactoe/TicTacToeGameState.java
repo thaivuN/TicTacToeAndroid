@@ -3,7 +3,11 @@ package com.example.mdthai.tictactoe;
 import java.io.Serializable;
 
 /**
- * Created by Thai-Vu Nguyen and Seaim Khan on 9/22/2016.
+ * The game logic behind Tic Tac Toe.
+ *
+ * @author Thai-Vu Nguyen and Seaim Khan
+ * @version 22/09/2016
+ * @since 1.8
  */
 public class TicTacToeGameState implements TicTacToe {
 
