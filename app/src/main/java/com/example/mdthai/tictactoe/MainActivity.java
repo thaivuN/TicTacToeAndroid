@@ -5,9 +5,11 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * MainActivity handles the UI aspects of the Tic Tac Toe game.
@@ -37,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         tttGame = new TicTacToeGameState();
 
         restorePreferences();
+        setDescriptionPlay();
+
 
 
     }
@@ -88,16 +92,20 @@ public class MainActivity extends AppCompatActivity {
             clickedBtn.setEnabled(false);
 
             if (result == Winner.P_ONE || result == Winner.P_TWO || result == Winner.TIE){
+                Toast toast = null;
 
                 if (result == Winner.P_ONE){
                     pOneCounter++;
+                    popAToast(R.string.you_win);
                 }
                 else if (result == Winner.P_TWO)
                 {
                     pTwoCounter++;
+                    popAToast(R.string.he_win);
                 }
                 else{
                     tieCounter++;
+                    popAToast(R.string.tie_win);
                 }
 
                 disableBtn();
@@ -118,11 +126,16 @@ public class MainActivity extends AppCompatActivity {
                     aiBtn.setEnabled(false);
 
                     if (aiWin == Winner.P_TWO || aiWin == Winner.TIE){
-                        if(aiWin == Winner.P_TWO)
+                        Toast toast = null;
+                        if(aiWin == Winner.P_TWO) {
                             pAICounter++;
-                        else
-                            tieCounter++;
+                            popAToast(R.string.ai_win);
 
+                        }
+                        else {
+                            popAToast(R.string.tie_win);
+                            tieCounter++;
+                        }
                         disableBtn();
                         savePreferences();
                     }
@@ -176,6 +189,7 @@ public class MainActivity extends AppCompatActivity {
         tieCounter = savedInstanceState.getInt("tieCount");
 
         restoreBoard(savedInstanceState.getIntArray("board"), savedInstanceState.getBooleanArray("state"));
+        setDescriptionPlay();
 
 
 
@@ -253,6 +267,8 @@ public class MainActivity extends AppCompatActivity {
 
         tttGame = new TicTacToeGameState(newMode);
         resetBoard();
+        setDescriptionPlay();
+
     }
 
     /**
@@ -350,6 +366,22 @@ public class MainActivity extends AppCompatActivity {
             btnToDisable.setEnabled(false);
         }
 
+    }
+
+    private void popAToast(int string_id)
+    {
+        Toast toast = Toast.makeText(MainActivity.this,getString(string_id), Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
+    }
+
+    private void setDescriptionPlay(){
+        TextView tv = (TextView) findViewById(R.id.desc);
+
+        if (tttGame.getAIMode() == true)
+            tv.setText(getString(R.string.descriptAI));
+        else
+            tv.setText(getString(R.string.descriptPlay));
     }
 
 

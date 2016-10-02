@@ -24,4 +24,8 @@
     <string name="score_tie">Nombre de match nul:</string>
     <string name="authors">App écrit par Thai-Vu Nguyen and Seaim Khan</string>
     <string name="help_text4">Appuyez sur Zéro pour réinitialiser les scores.</string>
+    <string name="you_win">Joueur 1 gagne cette ronde.</string>
+    <string name="he_win">Joueur 2 gagne cette ronde.</string>
+    <string name="ai_win">Tu as perdu contre un IA facile. Décevant</string>
+    <string name="tie_win">Cette ronde est nulle.</string>
 </resources>

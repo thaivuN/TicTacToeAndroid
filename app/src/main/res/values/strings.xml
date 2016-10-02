@@ -23,4 +23,8 @@
     <string name="score_ai">AI Score: </string>
     <string name="score_tie">Number of Ties: </string>
     <string name="authors">App written by Thai-Vu Nguyen and Seaim Khan</string>
+    <string name="you_win">Player 1 wins this round.</string>
+    <string name="he_win">Player 2 wins this round.</string>
+    <string name="ai_win">You lost to a random AI. How Sad.</string>
+    <string name="tie_win">This game is a tie.</string>
 </resources>
