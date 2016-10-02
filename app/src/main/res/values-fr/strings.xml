@@ -1,2 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">TTTSeaimThai-Vu</string>
+    <string name="title_main">Tic Tac Toe</string>
+    <string name="help">Aide</string>
+    <string name="zero">Zéro</string>
+    <string name="reset">Repartir</string>
+    <string name="about">À propos</string>
+    <string name="play">Jouer</string>
+    <string name="score">Score</string>
+    <string name="descriptPlay">Vous jouez contre Joueur 2</string>
+    <string name="descriptAI">Vous jouez contre l\'ordi</string>
+    <string name="title_help">Directives</string>
+    <string name="title_score">Scores</string>
+    <string name="help_text1">Tic Tac Toe est un jeu de société 3 x 3 où deux joueurs essaient de placer leurs marques en rangées horizontales, verticales ou diagonales.</string>
+    <string name="help_text2">Le premier jeu est humain contre humain par défaut.</string>
+    <string name="help_text3">Appuyez sur Repartir pour recommencer une session de Tic Tac Toe.</string>
+    <string name="help_text5">Appuyez sur Jouer pour recommencer la session et basculer entre Joueur 1 contre Joueur 2 et Joueur 1 contre l\'ordi.</string>
+    <string name="help_text6">Appuyez sur Score pour voir le tableau de score.</string>
+    <string name="close_btn">Retour</string>
+    <string name="score_p1">Score de Joueur 1:</string>
+    <string name="score_p2">Score de Joueur 2:</string>
+    <string name="score_ai">Score de l\'ordi:</string>
+    <string name="score_tie">Nombre de match nul:</string>
+    <string name="authors">App écrit par Thai-Vu Nguyen and Seaim Khan</string>
+    <string name="help_text4">Appuyez sur Zéro pour réinitialiser les scores.</string>
+</resources>

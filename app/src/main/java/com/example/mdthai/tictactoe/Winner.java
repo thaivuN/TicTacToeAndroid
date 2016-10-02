@@ -1,7 +1,11 @@
 package com.example.mdthai.tictactoe;
 
 /**
- * Created by Thai-Vu Nguyen and Seaim Khan on 9/22/2016.
+ * Enum representing winner of the Tic Tac Toe game.
+ *
+ * @author Thai-Vu Nguyen and Seaim Khan
+ * @version 22/09/2016
+ * @since 1.8
  */
 public enum Winner {
     NONE(0), P_ONE(1), P_TWO(2), TIE(3);

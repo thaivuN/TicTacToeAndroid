@@ -7,9 +7,12 @@ import android.view.View;
 import android.widget.TextView;
 
 /**
- * Created by MDThai on 9/29/2016.
+ * ScoreActivity handles the execution and termination of the score activity layout of the game.
+ *
+ * @author Thai-Vu Nguyen and Seaim Khan
+ * @version 29/09/2016
+ * @since 1.8
  */
-
 public class ScoreActivity extends AppCompatActivity {
 
     TextView p1View;
@@ -17,6 +20,12 @@ public class ScoreActivity extends AppCompatActivity {
     TextView aiView;
     TextView tieView;
 
+    /**
+     * onCreate method is called when activity is accessed and additionally handles scores.
+     *
+     * @param savedInstanceState A reference to a Bundle object that allows the activity to
+     *                           be restored to a previous state using data stored in the bundle.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,8 +62,9 @@ public class ScoreActivity extends AppCompatActivity {
     }
 
     /**
-     * Closes the activity
-     * @param view
+     * Closes the activity.
+     *
+     * @param view The View object that contains the activity`s UI elements.
      */
     public void onBtnFinish(View view){
         super.finish();

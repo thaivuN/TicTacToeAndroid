@@ -9,6 +9,13 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+/**
+ * MainActivity handles the UI aspects of the Tic Tac Toe game.
+ *
+ * @author Thai-Vu Nguyen and Seaim Khan
+ * @version 22/09/2016
+ * @since 1.8
+ */
 public class MainActivity extends AppCompatActivity {
 
     private TicTacToe tttGame;
@@ -17,6 +24,12 @@ public class MainActivity extends AppCompatActivity {
     private int pAICounter;
     private int tieCounter;
 
+    /**
+     * onCreate method is called when activity is accessed.
+     *
+     * @param savedInstanceState A reference to a Bundle object that allows the activity to
+     *                           be restored to a previous state using data stored in the bundle.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +43,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
-     * Launch Help Activity
-     * @param view
+     * Launches the Help Activity.
+     *
+     * @param view The View object that contains the activity`s UI elements.
      */
     public void launchHelp(View view){
         Intent intent = new Intent(this, HelpActivity.class);
@@ -49,9 +63,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     /**
-     * The core of the Tic Tac Toe game
+     * The image click logic for the Tic Tac Toe game.
      *
-     * @param view
+     * @param view The View object that contains the activity`s UI elements.
      */
     public void clickImages(View view)
     {
@@ -63,17 +77,14 @@ public class MainActivity extends AppCompatActivity {
 
             if (tttGame.getTurn() == false) {
                 //Player 1 Image
-                //TO DO: FIND IMAGE
                 clickedBtn.setBackgroundResource(R.drawable.x);
             }
             else
             {
                 //Player 2 Image
-                //TO DO: FIND IMAGE
                 clickedBtn.setBackgroundResource(R.drawable.o);
             }
             //DISABLE button
-
             clickedBtn.setEnabled(false);
 
             if (result == Winner.P_ONE || result == Winner.P_TWO || result == Winner.TIE){
@@ -106,8 +117,6 @@ public class MainActivity extends AppCompatActivity {
                     aiBtn.setBackgroundResource(R.drawable.o);
                     aiBtn.setEnabled(false);
 
-                    //aiBtn.setImageResource();
-
                     if (aiWin == Winner.P_TWO || aiWin == Winner.TIE){
                         if(aiWin == Winner.P_TWO)
                             pAICounter++;
@@ -125,8 +134,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Saves data into memory
-     * @param savedInstanceState Bundle
+     * Saves data into memory.
+     *
+     * @param savedInstanceState A reference to a Bundle object that allows the activity to
+     *                           be restored to a previous state using data stored in the bundle.
      */
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState)
@@ -145,9 +156,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Reads and restores from memory
+     * Reads and restores from memory.
      *
-     * @param savedInstanceState Bundle
+     * @param savedInstanceState A reference to a Bundle object that allows the activity to
+     *                           be restored to a previous state using data stored in the bundle.
      */
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState){
@@ -170,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * Saves data to SharedPreferences for future use.
      */
     private void savePreferences(){
         SharedPreferences prefs = getPreferences(MODE_PRIVATE);
@@ -185,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Reads and Loads data from SharedPreferences
+     * Reads and Loads data from SharedPreferences.
      *
      */
     private void restorePreferences(){
@@ -200,8 +212,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
-     * Reset the Game
-     * @param view
+     * Resets the Game.
+     *
+     * @param view The View object that contains the activity`s UI elements.
      */
     public void resetGame(View view)
     {
@@ -213,9 +226,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Reset the counters
+     * Resets the counters.
      *
-     * @param view
+     * @param view The View object that contains the activity`s UI elements.
      */
     public void zeroCounters(View view)
     {
@@ -230,9 +243,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Starts a new game and switches the mode of the Game.
      *
-     * Starts a new game and switches the mode of the Game
-     *
+     * @param view The View object that contains the activity`s UI elements.
      */
     public void onPlayGame(View view)
     {

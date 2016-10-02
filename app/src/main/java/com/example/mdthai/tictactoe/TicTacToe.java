@@ -1,13 +1,16 @@
 package com.example.mdthai.tictactoe;
 
 /**
- * Interface for the TicTacToe game logic
+ * Interface for the TicTacToe game logic.
  *
- * Created by Thai-Vu Nguyen and Seaim Khan on 9/22/2016.
+ * @author Thai-Vu Nguyen and Seaim Khan
+ * @version 22/09/2016
+ * @since 1.8
  */
 public interface TicTacToe {
 
     /**
+     * Handles the human player's move, and checks if move is decisive. Works for both players.
      *
      * @param square Square
      * @return a Winner enum that tells if there is a victor or not
@@ -16,59 +19,58 @@ public interface TicTacToe {
 
 
     /**
-     * Returns a boolean value.
-     * True for Player 1
-     * False for Player 2
+     * Returns a boolean value representing a player's turn.
+     * True for Player 1, False for Player 2.
      *
-     * @return boolean
+     * @return boolean A boolean value.
      */
-
-
     public boolean getTurn();
 
     /**
-     * Sets the turn of the Players
+     * Sets the turn of the players.
+     *
      * Set to TRUE to switch to PLAYER 1
      * Set to FALSE to switch to PLAYER 2
      *
-     * @param turn boolean
+     * @param turn boolean representing a player's turn.
      */
     public void setTurn(boolean turn);
 
     /**
-     * Returns the board array
-     * @return the board represented as an int[]
+     * Returns the board array.
+     *
+     * @return The board represented as an int[].
      */
     public int[] getBoard();
 
     /**
-     * Sets the board of the game
+     * Sets the board of the game.
      *
-     * @param board int[]
+     * @param board int[] representation of a board.
      */
     public void setBoard(int [] board);
 
     /**
-     * Checks if the game is in AI Mode
-     * TRUE for PLAYER VS AI is on
-     * False for PLAYER VS PLAYER
+     * Checks if the game is in AI Mode.
+     * True if PLAYER VS AI, False if PLAYER VS PLAYER.
      *
-     * @return boolean
+     * @return boolean A boolean value.
      */
     public boolean getAIMode();
 
     /**
-     * Sets the mode of the game
-     * set to TRUE for PLAYER vs AI MODE
-     * set to FALSE for PLAYER vs PLAYER MODE
+     * Sets the mode of the game.
+     * Set to TRUE for PLAYER VS AI mode
+     * Set to FALSE for PLAYER VS PLAYER mode
      *
-     * @param aiMode
+     * @param aiMode Boolean representation of a game mode.
      */
     public void setAIMode (boolean aiMode);
 
     /**
-     * Returns the AI's next move
-     * @return return the next move of the AI
+     * Returns the AI's next move.
+     *
+     * @return The next AI move.
      */
     public Square getAINextPosition();
 }

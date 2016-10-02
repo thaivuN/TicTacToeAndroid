@@ -10,6 +10,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ScoreActivity">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:background="@drawable/score"
+        android:layout_gravity="center_horizontal" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,6 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/close_btn"
-        android:onClick="onBtnFinish"/>
+        android:onClick="onBtnFinish"
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

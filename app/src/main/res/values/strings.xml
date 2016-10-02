@@ -11,7 +11,7 @@
     <string name="descriptAI">You are playing against the AI</string>
     <string name="title_help">Instructions</string>
     <string name="title_score">Scores</string>
-    <string name="help_text1">Tic Tac Toe is a 3X3 board game where two players try to place their marks in horizontale, vertical or diagonal rows.</string>
+    <string name="help_text1">Tic Tac Toe is a 3X3 board game where two players try to place their marks in horizontal, vertical or diagonal rows.</string>
     <string name="help_text2">The first game by default is a Human vs Human game.</string>
     <string name="help_text3">Press Reset to restart a Tic Tac Toe game session.</string>
     <string name="help_text4">Press Zero to reset the Scores.</string>
