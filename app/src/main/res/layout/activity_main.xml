@@ -16,7 +16,6 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.25"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:text="@string/descriptPlay"
         android:gravity="center"
 
         />
@@ -136,7 +135,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/reset"
-                android:onClick="resetGame" />
+                android:onClick="resetGame"
+                android:backgroundTint="@color/btn_color"/>
 
             <Button
                 android:id="@+id/help"
@@ -145,6 +145,7 @@
                 android:layout_weight="1"
                 android:text="@string/help"
                 android:onClick="launchHelp"
+                android:backgroundTint="@color/btn_color"
                 />
 
             <Button
@@ -153,14 +154,16 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/zero"
-                android:onClick="zeroCounters"/>
+                android:onClick="zeroCounters"
+                android:backgroundTint="@color/btn_color"/>
             <Button
                 android:id="@+id/score"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/score"
-                android:onClick="launchScore"/>
+                android:onClick="launchScore"
+                android:backgroundTint="@color/btn_color"/>
 
 
 
@@ -177,7 +180,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/play"
-                android:onClick="onPlayGame"/>
+                android:onClick="onPlayGame"
+                android:backgroundTint="@color/btn_color"/>
 
         </LinearLayout>
 
