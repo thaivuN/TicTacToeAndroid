@@ -14,20 +14,20 @@
         android:id="@+id/desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="@integer/small_weight"
         android:gravity="center"
-        android:paddingBottom="5dp"/>
+        android:paddingBottom="@dimen/land_small_padding"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_weight="14">
+        android:layout_weight="@integer/big_weight">
 
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="14"
+            android:layout_weight="@integer/big_weight"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:orientation="vertical"
@@ -38,27 +38,27 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="@integer/small_weight"
                 android:orientation="horizontal">
                 <ImageButton
                     android:id="@+id/box1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="@integer/small_weight"
                     android:background="@drawable/tile"
                     android:onClick="clickImages"/>
                 <ImageButton
                     android:id="@+id/box2"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="@integer/small_weight"
                     android:background="@drawable/tile"
                     android:onClick="clickImages"/>
                 <ImageButton
                     android:id="@+id/box3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="@integer/small_weight"
                     android:background="@drawable/tile"
                     android:onClick="clickImages"/>
             </LinearLayout>
@@ -66,28 +66,28 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="@integer/small_weight"
                 android:orientation="horizontal">
 
                 <ImageButton
                     android:id="@+id/box4"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="@integer/small_weight"
                     android:background="@drawable/tile"
                     android:onClick="clickImages"/>
                 <ImageButton
                     android:id="@+id/box5"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="@integer/small_weight"
                     android:background="@drawable/tile"
                     android:onClick="clickImages"/>
                 <ImageButton
                     android:id="@+id/box6"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="@integer/small_weight"
                     android:background="@drawable/tile"
                     android:onClick="clickImages"/>
 
@@ -96,28 +96,28 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="@integer/small_weight"
                 android:orientation="horizontal">
 
                 <ImageButton
                     android:id="@+id/box7"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="@integer/small_weight"
                     android:background="@drawable/tile"
                     android:onClick="clickImages"/>
                 <ImageButton
                     android:id="@+id/box8"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="@integer/small_weight"
                     android:background="@drawable/tile"
                     android:onClick="clickImages"/>
                 <ImageButton
                     android:id="@+id/box9"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="@integer/small_weight"
                     android:background="@drawable/tile"
                     android:onClick="clickImages"/>
 
@@ -129,7 +129,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_weight="1"
+            android:layout_weight="@integer/small_weight"
             android:layout_marginRight="@dimen/tl_land_btn_margin_right"
             android:layout_marginLeft="@dimen/tl_land_btn_margin_left">
 
@@ -137,7 +137,7 @@
                 android:id="@+id/reset"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="@integer/small_weight"
                 android:text="@string/reset"
                 android:onClick="resetGame"
                 android:backgroundTint="@color/btn_color"/>
@@ -146,7 +146,7 @@
                 android:id="@+id/help"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="@integer/small_weight"
                 android:text="@string/help"
                 android:onClick="launchHelp"
                 android:backgroundTint="@color/btn_color"/>
@@ -155,7 +155,7 @@
                 android:id="@+id/zero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="@integer/small_weight"
                 android:text="@string/zero"
                 android:onClick="zeroCounters"
                 android:backgroundTint="@color/btn_color"/>
@@ -163,7 +163,7 @@
                 android:id="@+id/score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="@integer/small_weight"
                 android:text="@string/score"
                 android:onClick="launchScore"
                 android:backgroundTint="@color/btn_color"/>
@@ -173,7 +173,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/play"
-                android:layout_weight="1"
+                android:layout_weight="@integer/small_weight"
                 android:onClick="onPlayGame"
                 android:backgroundTint="@color/btn_color"/>
 

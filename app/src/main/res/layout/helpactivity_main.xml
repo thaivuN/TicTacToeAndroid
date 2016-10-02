@@ -68,7 +68,8 @@
         android:layout_height="wrap_content"
         android:text="@string/close_btn"
         android:onClick="onFinishBtn"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/btn_color"/>
 
 
 </LinearLayout>

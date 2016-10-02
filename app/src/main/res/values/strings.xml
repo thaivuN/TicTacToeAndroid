@@ -27,4 +27,5 @@
     <string name="he_win">Player 2 wins this round.</string>
     <string name="ai_win">You lost to a random AI. How Sad.</string>
     <string name="tie_win">This game is a tie.</string>
+    <string name="zero_text">You have reset the scores.</string>
 </resources>

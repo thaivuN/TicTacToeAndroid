@@ -41,8 +41,6 @@ public class MainActivity extends AppCompatActivity {
         restorePreferences();
         setDescriptionPlay();
 
-
-
     }
 
 
@@ -253,6 +251,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         savePreferences();
+        popAToast(R.string.zero_text);
 
     }
 
